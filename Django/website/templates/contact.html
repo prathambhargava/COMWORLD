@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}CONTACT{% endblock title %}
+{% block body %} 
+
+<div class="container-fluid"name ="contact">
+    <img class="d-block w-100" src="/static/contact1.jpg" width="400" height="500">
+    
+</div>
+<div class="container">
+{% comment %} <h3 class="text-centre my-4">CONTACT US </h3>
+<style>
+    h3{padding-left:486px;}
+</style> {% endcomment %}
+
+<form action="/contactus" method="post">
+{% csrf_token %}
+    <style>
+        form{padding-right: 140px;
+            padding-left: 100px;
+            margin-top: 28px;}
+    </style>
+    <div class="form-group ">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Enter you Name">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control" name ="email"id="exampleFormControlInput1" placeholder="Enter your Email">
+      </div>
+
+    <div class="form-group ">
+        <label for="phone">Contact number </label>
+        <input type="phone"class="form-control" id="phone"name "phone"placeholder="Enter your Contact number ">
+      </div>
+    
+    
+    <div class="form-group">
+      <label for="desc">Tell us your Problem</label>
+      <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+</form>    
+</div>
+{% endblock body %}
